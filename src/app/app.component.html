@@ -1,4 +1,5 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<h1>Lista de Tarefas</h1>
+
+<ul>
+  <li *ngFor="let todo of todos">{{ todo.title }}</li>
+</ul>
