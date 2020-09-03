@@ -1,7 +1,12 @@
 <h1>Lista de Tarefas</h1>
 
 <ul>
-  <li *ngFor="let todo of todos">{{ todo.title }}</li>
+  <li *ngFor="let todo of todos">
+    <span *ngIf="todo.done">OK</span>
+    {{ todo.title }}
+   <button (click)="removeTodo(todo)">Remover</button>
+   <button (click)="markasDone(todo)">Concluir</button>
+  </li>
 </ul>
 
 <form [formGroup]="form">

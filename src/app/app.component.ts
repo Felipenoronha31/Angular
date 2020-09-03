@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Todo } from 'src/models/todo.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Todo } from '../model/todo.model';
 
 
 
@@ -37,10 +37,15 @@ export class AppComponent  {
   addTodo(){
    const title = this.form.controls['title'].value // valor
    this.todos.push(new Todo(title,false));
+   this.form.reset();
   }
 
   removeTodo(todo: Todo){
     const index = this.todos.indexOf(todo);
     this.todos.splice(index, 1);
+  }
+
+  markasDone(todo: Todo){
+    todo.done = true;
   }
 }
